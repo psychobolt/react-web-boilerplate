@@ -11,9 +11,11 @@ The essential boilerplate for React web development. Bootstrapped with [Create R
 
 ## Included
 
-- Routing support with [React Router](https://reacttraining.com/react-router/)
-- [Redux](https://github.com/reactjs/react-redux) with [React bindings](https://github.com/reactjs/react-redux) support
+- [Redux](https://github.com/reactjs/react-redux) with [DevTools](http://extension.remotedev.io/) and support libraries:
+  - [React bindings](https://github.com/reactjs/react-redux)
+  - [React Router Redux](https://reacttraining.com/react-router/)
 - CSS-in-JS using [Styled Components](https://www.styled-components.com/) and [Rebass design system](http://jxnblk.com/rebass/)
 - Static type checking with [Flow](https://flow.org/)
 - Shallow component testing with [Enzyme](http://airbnb.io/enzyme/)
 - [Travis CI](https://travis-ci.org/) configuration and [GH pages](https://pages.github.com/) deployment
+- Code coverage reporter [Codecov](https://codecov.io/)

@@ -21,6 +21,7 @@ The essential boilerplate for React web development. Supports customization. Boo
 - ID generator library: [Hashids](http://hashids.org/)
 - Override CRA config with [React App Rewired](https://github.com/timarney/react-app-rewired) rewires:
   - Babel plugins
+    - [Babel Polyfills](https://babeljs.io/docs/usage/polyfill/)
     - [Lodash](https://github.com/osdevisnot/react-app-rewire-contrib/tree/master/packages/react-app-rewire-lodash)
     - [Styled Components](https://github.com/withspectrum/react-app-rewire-styled-components)
   - [React Hot Loader](https://github.com/cdharris/react-app-rewire-hot-loader)

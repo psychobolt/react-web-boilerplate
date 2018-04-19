@@ -1,22 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { IntlProvider, addLocaleData } from 'react-intl';
+import en from 'react-intl/locale-data/en';
+import zh from 'react-intl/locale-data/zh';
+import { Provider } from 'rebass';
 
-import logo from './logo.svg';
-import './App.css';
+import TodoList, { Filters, messages } from './TodoList';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+addLocaleData([ ...en, ...zh ]);
 
-export default App;
+const language = navigator.browserLanguage || navigator.language;
+const i18n = messages[language] || messages['en'];
+
+export default ({ location }) => {
+  const filter = location.state ? location.state.filter : Filters.ALL;
+  return (
+    <IntlProvider locale={language} messages={i18n}>
+      <Provider><TodoList activeFilter={filter} /></Provider>
+    </IntlProvider>
+  );
+};

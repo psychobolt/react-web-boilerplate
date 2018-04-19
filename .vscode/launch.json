@@ -2,17 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Chrome",
-      "type": "chrome",
-      "request": "launch",
-      "url": "http://localhost:3000",
-      "webRoot": "${workspaceRoot}/src",
-      "sourceMapPathOverrides": {
-        "webpack:///src/*": "${webRoot}/*"
-      }
-    },
-    {
-      "name": "Debug CRA Tests",
+      "name": "Debug Jest",
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/react-scripts",      
@@ -20,7 +10,25 @@
         "test",
         "--runInBand",
         "--no-cache",
-        "--env=jsdom"
+        "--env=jsdom",
+      ],
+      "cwd": "${workspaceRoot}",
+      "protocol": "inspector",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "name": "Debug Jest w/ Coverage",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/react-scripts",      
+      "args": [
+        "test",
+        "--runInBand",
+        "--no-cache",
+        "--env=jsdom",
+        "--coverage",
+        "--watch"
       ],
       "cwd": "${workspaceRoot}",
       "protocol": "inspector",

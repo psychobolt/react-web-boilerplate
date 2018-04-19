@@ -4,30 +4,36 @@
   "private": true,
   "homepage": "https://psychobolt.github.com/react-web-boilerplate",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom",
+    "eject": "react-app-rewired eject",
+    "lint:tests": "eslint src/**/__tests__/*.js",
     "flow": "flow",
     "codecov": "codecov"
   },
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.js",
+      "!src/**/*.(i18n|state).js",
       "!src/**/index.js",
-      "!src/registerServiceWorker.js"
+      "!src/shared/**/*.js",
+      "!src/(registerServiceWorker|reducer).js"
     ]
   },
   "dependencies": {
-    "history": "^4.7.2",
+    "hashids": "^1.1.4",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
+    "react-hot-loader": "^4.0.1",
+    "react-intl": "^2.4.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
-    "react-router-redux": "^5.0.0-alpha.9",
     "react-scripts": "1.1.4",
     "rebass": "^2.0.0-0",
+    "recompose": "^0.26.0",
     "redux": "^3.7.2",
+    "reselect": "^3.0.1",
     "styled-components": "^3.2.5"
   },
   "devDependencies": {
@@ -35,7 +41,12 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "flow-bin": "^0.69.0",
+    "react-app-rewire-hot-loader": "^1.0.1",
+    "react-app-rewire-lodash": "^2.0.0",
+    "react-app-rewire-styled-components": "^3.0.2",
+    "react-app-rewired": "^1.5.0",
     "react-test-renderer": "^16.3.1",
-    "redux-devtools-extension": "^2.13.2"
+    "redux-devtools-extension": "^2.13.2",
+    "redux-mock-store": "^1.5.1"
   }
 }

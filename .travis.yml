@@ -6,6 +6,7 @@ cache:
     - node_modules
 script:
   - npm run build
+  - npm run lint:tests -- --max-warnings=0
   - npm test -- --coverage
 deploy:
   provider: pages

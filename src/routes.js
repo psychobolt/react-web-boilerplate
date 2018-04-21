@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import App from './App';
 
 export default () => (
-  <Router>
+  <Router basename={process.env.PUBLIC_URL}>
     <Route path="/" component={App} />
   </Router>
 );

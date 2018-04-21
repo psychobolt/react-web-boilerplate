@@ -2,7 +2,6 @@
   "name": "react-web-boilerplate",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://psychobolt.github.com/react-web-boilerplate",
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",

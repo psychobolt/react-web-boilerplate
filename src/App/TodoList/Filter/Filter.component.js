@@ -11,7 +11,7 @@ export const Filters = {
   COMPLETED: 'completed'
 };
 
-const Routes = {
+export const Routes = {
   ALL: { pathname: '/', state: { filter: Filters.ALL } },
   ACTIVE: { pathname: '/active', state: { filter: Filters.ACTIVE } },
   COMPLETED: { pathname: '/completed', state: { filter: Filters.COMPLETED } }

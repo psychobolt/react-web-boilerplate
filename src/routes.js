@@ -5,6 +5,6 @@ import App from './App';
 
 export default () => (
   <Router basename={process.env.PUBLIC_URL}>
-    <Route path="/" component={App} />
+    <Route path="/:filter?" component={App} />
   </Router>
 );

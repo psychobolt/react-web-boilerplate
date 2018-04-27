@@ -25,6 +25,7 @@ The essential boilerplate for React web development. Supports customization. Boo
     - [Lodash](https://github.com/osdevisnot/react-app-rewire-contrib/tree/master/packages/react-app-rewire-lodash)
     - [Styled Components](https://github.com/withspectrum/react-app-rewire-styled-components)
   - [React Hot Loader](https://github.com/cdharris/react-app-rewire-hot-loader)
+- [stylelint](https://stylelint.io)
 - Static type checking with [Flow](https://flow.org/)
 - Shallow component testing with [Enzyme](http://airbnb.io/enzyme/)
 - [Travis CI](https://travis-ci.org/) configuration and [GH pages](https://pages.github.com/) deployment

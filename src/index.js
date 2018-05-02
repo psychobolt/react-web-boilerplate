@@ -14,6 +14,12 @@ const store = createStore(
   composeEnhancers(),
 );
 
+if (module.hot) {
+  module.hot.accept('./reducer', () => {
+    store.replaceReducer(require('./reducer').default);
+  });
+}
+
 ReactDOM.render(
   <Provider store={store}><Routes /></Provider>, 
   document.getElementById('root')

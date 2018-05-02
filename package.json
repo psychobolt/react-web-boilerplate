@@ -14,7 +14,7 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.js",
-      "!src/**/*.(i18n|state).js",
+      "!src/**/*.(i18n|state|reducers).js",
       "!src/**/index.js",
       "!src/shared/**/*.js",
       "!src/(registerServiceWorker|reducer).js"

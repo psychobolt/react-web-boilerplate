@@ -6,7 +6,7 @@ import TodoList from '../TodoList.container';
 
 const middlewares = [];
 const mockStore = configureStore(middlewares);
-const initialState = { todoList: { items: {} } };
+const initialState = { todos: {} };
 
 it('container <TodoList /> renders without crashing', () => {
   shallow(<TodoList />, { context: { store: mockStore(initialState) }});

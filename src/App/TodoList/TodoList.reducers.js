@@ -1,20 +1,17 @@
-import initialState from './TodoList.state';
+import * as initialState from './TodoList.state';
 import { Actions as FormActions } from './Form';
 import { Actions as ItemActions } from './Item';
 
-export default (state = initialState, action) => {
+export const todosReducer = (state = initialState.todos, action) => {
   switch (action.type) {
     case FormActions.ADD_TODO: {
       const { id, text } = action.payload;
       return {
         ...state,
-        items: {
-          ...state.items,
-          [id]: {
-            id,
-            text,
-            completed: false,
-          }
+        [id]: {
+          id,
+          text,
+          completed: false,
         }
       };
     }
@@ -22,15 +19,16 @@ export default (state = initialState, action) => {
       const { id, completed } = action.payload;
       return {
         ...state,
-        items: {
-          ...state.items,
-          [id]: {
-            ...state.items[id],
-            completed
-          }
+        [id]: {
+          ...state[id],
+          completed
         }
       };
     }
     default: return state;
   }
 };
+
+export default {
+  todos: todosReducer
+}

@@ -1,3 +1,1 @@
-export default {
-  items: {}
-};
+export const todos = {};

@@ -1,21 +1,19 @@
-import reducer from '../TodoList.reducer';
-import initialState from '../TodoList.state';
+import { todosReducer } from '../TodoList.reducers';
+import * as initialState from '../TodoList.state';
 import { addTodo } from '../Form';
 import { toggleComplete } from '../Item';
 
-describe('TodoList reducer', () => {
+describe('Todos reducer', () => {
   it('should return the initial state', () => {
-    expect(reducer(undefined, {})).toEqual(initialState);
+    expect(todosReducer(undefined, {})).toEqual(initialState.todos);
   });
 
   it('should handle ADD_TODO', () => {
     const action = addTodo('todo');
-    expect(reducer(undefined, action)).toEqual({
-      items: {
-        [action.payload.id]: {
-          ...action.payload,
-          completed: false
-        }
+    expect(todosReducer(undefined, action)).toEqual({
+      [action.payload.id]: {
+        ...action.payload,
+        completed: false
       }
     });
   });
@@ -23,21 +21,17 @@ describe('TodoList reducer', () => {
   it('should handle TOGGLE_COMPLETE', () => {
     const id = '0';
     const state = {
-      items: {
-        [id]: {
-          id,
-          text: 'todo',
-          completed: false
-        }
+      [id]: {
+        id,
+        text: 'todo',
+        completed: false
       }
     };
     const action = toggleComplete(id, true);
-    expect(reducer(state, action)).toEqual({
-      items: {
-        [id]: {
-          ...state.items[id],
-          completed: true
-        }
+    expect(todosReducer(state, action)).toEqual({
+      [id]: {
+        ...state[id],
+        completed: true
       }
     });
   });

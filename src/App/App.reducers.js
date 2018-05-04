@@ -1,5 +1,5 @@
-import reducer from './TodoList/TodoList.reducer';
+import todoListReducers from './TodoList/TodoList.reducers';
 
 export default {
-  todoList: reducer
+  ...todoListReducers
 };

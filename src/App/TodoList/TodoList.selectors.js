@@ -2,7 +2,7 @@ import { createSelector } from 'reselect';
 
 import { Filters } from './Filter';
 
-const getTodos = state => Object.values(state.todoList.items);
+const getTodos = state => Object.values(state.todos);
 
 const getFilter = (state, props) => props.activeFilter;
 

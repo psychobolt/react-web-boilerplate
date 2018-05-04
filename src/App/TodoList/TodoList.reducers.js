@@ -1,4 +1,4 @@
-import * as initialState from './TodoList.state';
+import initialState from './TodoList.state';
 import { Actions as FormActions } from './Form';
 import { Actions as ItemActions } from './Item';
 

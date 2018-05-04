@@ -1,5 +1,5 @@
 import { todosReducer } from '../TodoList.reducers';
-import * as initialState from '../TodoList.state';
+import initialState from '../TodoList.state';
 import { addTodo } from '../Form';
 import { toggleComplete } from '../Item';
 

@@ -11,6 +11,7 @@
         "--runInBand",
         "--no-cache",
         "--env=jsdom",
+        "--watchAll=true"
       ],
       "cwd": "${workspaceRoot}",
       "protocol": "inspector",
@@ -28,7 +29,7 @@
         "--no-cache",
         "--env=jsdom",
         "--coverage",
-        "--watchAll"
+        "--watchAll=true"
       ],
       "cwd": "${workspaceRoot}",
       "protocol": "inspector",

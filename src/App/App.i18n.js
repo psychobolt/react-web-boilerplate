@@ -1,10 +1,13 @@
-import { messages } from './TodoList';
+import { messages as headerMessages } from './Header';
+import { messages as todoListMessages } from './TodoList';
 
 export default {
   en: {
-    ...messages.en,
+    ...headerMessages.en,
+    ...todoListMessages.en,
   },
   'zh-TW': {
-    ...messages['zh-TW'],
+    ...headerMessages['zh-TW'],
+    ...todoListMessages['zh-TW'],
   },
 };

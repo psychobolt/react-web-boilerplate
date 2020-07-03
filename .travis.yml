@@ -12,7 +12,7 @@ script:
   - npm test -- --coverage
 deploy:
   provider: pages
-  skip_cleanup: true
+  edge: true
   github_token: $GITHUB_TOKEN
   local_dir: build
   on:

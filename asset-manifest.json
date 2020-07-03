@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/react-web-boilerplate/static/js/main.090261db.chunk.js",
-    "main.js.map": "/react-web-boilerplate/static/js/main.090261db.chunk.js.map",
+    "main.js": "/react-web-boilerplate/static/js/main.6db12217.chunk.js",
+    "main.js.map": "/react-web-boilerplate/static/js/main.6db12217.chunk.js.map",
     "runtime-main.js": "/react-web-boilerplate/static/js/runtime-main.d68a2af4.js",
     "runtime-main.js.map": "/react-web-boilerplate/static/js/runtime-main.d68a2af4.js.map",
-    "static/js/2.250d9ed5.chunk.js": "/react-web-boilerplate/static/js/2.250d9ed5.chunk.js",
-    "static/js/2.250d9ed5.chunk.js.map": "/react-web-boilerplate/static/js/2.250d9ed5.chunk.js.map",
+    "static/js/2.7da4efb6.chunk.js": "/react-web-boilerplate/static/js/2.7da4efb6.chunk.js",
+    "static/js/2.7da4efb6.chunk.js.map": "/react-web-boilerplate/static/js/2.7da4efb6.chunk.js.map",
     "index.html": "/react-web-boilerplate/index.html",
-    "precache-manifest.9519a5b9ca564766336c5bbed16be7f1.js": "/react-web-boilerplate/precache-manifest.9519a5b9ca564766336c5bbed16be7f1.js",
+    "precache-manifest.2b16c12b147f9a0640a2bc613d258158.js": "/react-web-boilerplate/precache-manifest.2b16c12b147f9a0640a2bc613d258158.js",
     "service-worker.js": "/react-web-boilerplate/service-worker.js",
-    "static/js/2.250d9ed5.chunk.js.LICENSE.txt": "/react-web-boilerplate/static/js/2.250d9ed5.chunk.js.LICENSE.txt"
+    "static/js/2.7da4efb6.chunk.js.LICENSE.txt": "/react-web-boilerplate/static/js/2.7da4efb6.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.d68a2af4.js",
-    "static/js/2.250d9ed5.chunk.js",
-    "static/js/main.090261db.chunk.js"
+    "static/js/2.7da4efb6.chunk.js",
+    "static/js/main.6db12217.chunk.js"
   ]
 }

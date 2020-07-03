@@ -5,27 +5,24 @@ describe('TodoList selectors', () => {
   describe('should get todos', () => {
     const state = {
       todos: {
-        '0': {
+        0: {
           id: '0',
           text: 'todo1',
-          completed: false
+          completed: false,
         },
-        '1': {
+        1: {
           id: '1',
           text: 'todo2',
-          completed: true
-        }
-      }
+          completed: true,
+        },
+      },
     };
 
-    it('that are active', () => {
-      expect(getVisibleTodos(state, { activeFilter: Filters.ACTIVE }))
-        .toEqual([state.todos[0]]);
-    });
+    it('that are active', () => expect(getVisibleTodos(state, Filters.ACTIVE))
+      .toEqual([state.todos[0]]));
 
-    it('that are completed', () => {
-        expect(getVisibleTodos(state, { activeFilter: Filters.COMPLETED }))
-          .toEqual([state.todos[1]]);
-      });
+    it('that are completed', () => expect(getVisibleTodos(
+      state, Filters.COMPLETED,
+    )).toEqual([state.todos[1]]));
   });
 });

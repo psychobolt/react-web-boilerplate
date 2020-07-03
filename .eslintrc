@@ -1,3 +1,31 @@
 {
-    "extends": "react-app"
+    "parser": "babel-eslint",
+    "extends": ["airbnb", "airbnb/hooks", "plugin:flowtype/recommended"],
+    "plugins": ["flowtype", "jest"],
+    "rules": {
+        "arrow-parens": ["error", "as-needed"],
+        "no-param-reassign": ["error", { "props": false }],
+        "max-len": ["error", { "ignoreComments": true }],
+        "object-curly-newline": ["error", {"consistent": true}],
+        "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }],
+        "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+        "import/prefer-default-export": 0,
+        "react/jsx-props-no-spreading": 0,
+        "react-hooks/rules-of-hooks": 0
+    },
+    "overrides": [{
+        "files": ["src/**/*.component.js", "src/**/*.container.js"],
+        "rules": {
+            "react-hooks/rules-of-hooks": "error"
+        }
+    }],
+    "env": {
+        "browser": true,
+        "jest/globals": true
+    },
+    "settings": {
+        "import/resolver": {
+            "babel-module": {}
+        }
+    }
 }

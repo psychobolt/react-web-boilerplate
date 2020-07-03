@@ -1,26 +1,20 @@
-import React from 'react';
-import { IntlProvider, addLocaleData } from 'react-intl';
-import en from 'react-intl/locale-data/en';
-import zh from 'react-intl/locale-data/zh';
-import { Provider } from 'rebass';
+// @flow
+import * as React from 'react';
+import { IntlProvider } from 'react-intl';
+import { ChakraProvider, CSSReset } from '@chakra-ui/core';
 
-import TodoList, { Filters, FilterRoutes, messages } from './TodoList';
+import messages from './App.i18n';
+import theme from './App.theme';
+import TodoList from './TodoList';
 
-addLocaleData([ ...en, ...zh ]);
+const { language } = navigator;
+const i18n = messages[language] || messages.en;
 
-const language = navigator.browserLanguage || navigator.language;
-const i18n = messages[language] || messages['en'];
-
-const getPathnameFilter = pathname => {
-  const route = Object.values(FilterRoutes).find(route => route.pathname === pathname);
-  return route ? route.state.filter : Filters.ALL;
-}
-
-export default ({ location }) => {
-  const filter = location.state ? location.state.filter : getPathnameFilter(location.pathname);
-  return (
-    <IntlProvider locale={language} messages={i18n}>
-      <Provider><TodoList activeFilter={filter} /></Provider>
-    </IntlProvider>
-  );
-};
+export default () => (
+  <IntlProvider locale={language} messages={i18n}>
+    <ChakraProvider theme={theme}>
+      <CSSReset />
+      <TodoList />
+    </ChakraProvider>
+  </IntlProvider>
+);

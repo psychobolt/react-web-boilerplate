@@ -5,8 +5,10 @@ cache:
   directories:
     - node_modules
 script:
-  - npm run build
+  - npm run flow-typed-install
+  - npm run flow
   - npm run lint:tests -- --max-warnings=0
+  - npm run build
   - npm test -- --coverage
 deploy:
   provider: pages

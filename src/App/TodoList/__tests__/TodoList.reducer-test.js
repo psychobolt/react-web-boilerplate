@@ -13,8 +13,8 @@ describe('Todos reducer', () => {
     expect(todosReducer(undefined, action)).toEqual({
       [action.payload.id]: {
         ...action.payload,
-        completed: false
-      }
+        completed: false,
+      },
     });
   });
 
@@ -24,15 +24,15 @@ describe('Todos reducer', () => {
       [id]: {
         id,
         text: 'todo',
-        completed: false
-      }
+        completed: false,
+      },
     };
     const action = toggleComplete(id, true);
     expect(todosReducer(state, action)).toEqual({
       [id]: {
         ...state[id],
-        completed: true
-      }
+        completed: true,
+      },
     });
   });
 });

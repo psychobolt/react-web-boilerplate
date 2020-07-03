@@ -8,6 +8,6 @@ export default {
   },
   'zh-TW': {
     ...filterMessages['zh-TW'],
-    ...formMessages['zh-TW']
-  }
+    ...formMessages['zh-TW'],
+  },
 };

@@ -5,7 +5,7 @@
       "name": "Debug Jest",
       "type": "node",
       "request": "launch",
-      "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/react-scripts",      
+      "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/react-app-rewired",
       "args": [
         "test",
         "--runInBand",
@@ -21,14 +21,14 @@
       "name": "Debug Jest w/ Coverage",
       "type": "node",
       "request": "launch",
-      "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/react-scripts",      
+      "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/react-app-rewired",      
       "args": [
         "test",
         "--runInBand",
         "--no-cache",
         "--env=jsdom",
         "--coverage",
-        "--watch"
+        "--watchAll"
       ],
       "cwd": "${workspaceRoot}",
       "protocol": "inspector",

@@ -1,6 +1,7 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
-import { shallow, mount } from 'enzyme';
+import { mount } from 'enzyme';
 
 import Item from '../Item.container';
 import { toggleComplete } from '../Item.actions';
@@ -17,12 +18,12 @@ describe('container <Item />', () => {
   });
 
   it('renders without crashing', () => {
-    shallow(<Item />, { context: { store } });
+    mount(<Provider store={store}><Item /></Provider>);
   });
 
   it('dispatch action on toggle', () => {
-    const wrapper = mount(<Item />, { context: { store }});
-    wrapper.find('Checkbox').simulate('click');
+    const wrapper = mount(<Provider store={store}><Item /></Provider>);
+    wrapper.find('input').simulate('change');
     expect(store.getActions()).toEqual([toggleComplete(undefined, true)]);
-  })
+  });
 });

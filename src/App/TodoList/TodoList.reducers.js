@@ -12,7 +12,7 @@ export const todosReducer = (state = initialState.todos, action) => {
           id,
           text,
           completed: false,
-        }
+        },
       };
     }
     case ItemActions.TOGGLE_COMPLETE: {
@@ -21,8 +21,8 @@ export const todosReducer = (state = initialState.todos, action) => {
         ...state,
         [id]: {
           ...state[id],
-          completed
-        }
+          completed,
+        },
       };
     }
     default: return state;
@@ -30,5 +30,5 @@ export const todosReducer = (state = initialState.todos, action) => {
 };
 
 export default {
-  todos: todosReducer
-}
+  todos: todosReducer,
+};

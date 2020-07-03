@@ -1,15 +1,17 @@
-import React from 'react';
-import { Row, Label, Checkbox } from 'rebass';
+// @flow
+import * as React from 'react';
+import { ListItem, Checkbox, Text } from '@chakra-ui/core';
 
-import * as styles from './Item.style';
+type Props = {
+  text: string,
+  completed: boolean,
+  onToggle: (event: SyntheticMouseEvent<HTMLLabelElement>) => any,
+};
 
-const ItemLabel = Label.extend(styles.label);
-
-export default ({ text, completed, onToggle }) => (
-  <Row>
-    <ItemLabel onClick={onToggle} completed={completed ? 'true' : 'false'}>
-      <Checkbox onChange={onToggle} checked={completed} />
-      {text}
-    </ItemLabel>
-  </Row>
+export default ({ text, completed, onToggle }: Props) => (
+  <ListItem>
+    <Checkbox onChange={onToggle} isChecked={completed}>
+      <Text as={completed ? 'del' : 'p'}>{text}</Text>
+    </Checkbox>
+  </ListItem>
 );

@@ -14,17 +14,11 @@ The essential boilerplate for React web development. Supports customization. Boo
 - Example [Todo List](https://psychobolt.github.io/react-web-boilerplate/) app
 - React support libraries:
   - [React Router](https://reacttraining.com/react-router/)
-  - [Recompose](https://github.com/acdlite/recompose)
 - [Redux bindings](https://github.com/reactjs/react-redux) with [DevTools](http://extension.remotedev.io/) and [Redux](https://redux.js.org/) support libraries:
   - [Reselect](https://github.com/reactjs/reselect)
-- CSS-in-JS using [Styled Components](https://www.styled-components.com/) and [Rebass design system](http://jxnblk.com/rebass/)
+- CSS-in-JS using [Emotion](https://emotion.sh/) and [Chakra UI](https://next.chakra-ui.com/)
 - ID generator library: [Hashids](http://hashids.org/)
-- Override CRA config with [React App Rewired](https://github.com/timarney/react-app-rewired) rewires:
-  - Babel plugins
-    - [Babel Polyfills](https://babeljs.io/docs/usage/polyfill/)
-    - [Lodash](https://github.com/osdevisnot/react-app-rewire-contrib/tree/master/packages/react-app-rewire-lodash)
-    - [Styled Components](https://github.com/withspectrum/react-app-rewire-styled-components)
-  - [React Hot Loader](https://github.com/cdharris/react-app-rewire-hot-loader)
+- Override CRA config with [customize-cra](https://github.com/arackaf/customize-cra) instead of ejecting
 - [stylelint](https://stylelint.io)
 - Static type checking with [Flow](https://flow.org/)
 - Shallow component testing with [Enzyme](http://airbnb.io/enzyme/)

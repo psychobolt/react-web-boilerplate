@@ -5,38 +5,16 @@
  * English-locale intl context around them.
  */
 
-import React from 'react';
-import { IntlProvider, intlShape } from 'react-intl';
-import { mount, shallow } from 'enzyme';
+import { IntlProvider } from 'react-intl';
+import { mount } from 'enzyme';
 
-/**
- * When using React-Intl `injectIntl` on components, props.intl is required.
- */
-function nodeWithIntlProp(node, intl) {
-    return React.cloneElement(node, { intl });
-}
+const defaultLocale = 'en';
 
-export function shallowWithIntl(node, { context, messages, ...additionalOptions } = {}) {
-    const intlProvider = new IntlProvider({ locale: 'en', messages }, {});
-    const { intl } = intlProvider.getChildContext();
-    return shallow(
-        nodeWithIntlProp(node, intl),
-        {
-            context: Object.assign({}, context, {intl}),
-            ...additionalOptions,
-        }
-    );
-}
-
-export function mountWithIntl(node, { context, childContextTypes, messages, ...additionalOptions } = {}) {
-    const intlProvider = new IntlProvider({ locale: 'en', messages }, {});
-    const { intl } = intlProvider.getChildContext();
-    return mount(
-        nodeWithIntlProp(node, intl),
-        {
-            context: Object.assign({}, context, {intl}),
-            childContextTypes: Object.assign({}, { intl: intlShape }, childContextTypes),
-            ...additionalOptions,
-        }
-    );
-}
+export const mountWithIntl = (node, locale, messages) => mount(node, {
+  wrappingComponent: IntlProvider,
+  wrappingComponentProps: {
+    locale,
+    defaultLocale,
+    messages,
+  },
+});

@@ -5,5 +5,5 @@ import { frameworkReducers } from './Framework';
 
 export default combineReducers({
   ...appReducers,
-  ...frameworkReducers
+  ...frameworkReducers,
 });

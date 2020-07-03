@@ -1,49 +1,63 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
-import { shallow } from 'enzyme';
+
+import { mountWithIntl } from 'shared/intl-enzyme-test-helper';
 
 import Form from '../Form.container';
 import { addTodo } from '../Form.actions';
 import i18n from '../Form.i18n';
-import { mountWithIntl } from '../../../../shared/intl-enzyme-test-helper';
 
 const middlewares = [];
 const mockStore = configureStore(middlewares);
-const messages = i18n.en;
+const locale = 'en';
+const messages = i18n[locale];
 const initialState = {};
 
 describe('container <Form />', () => {
   it('renders without crashing', () => {
-    shallow(<Form />, { 
-      context: { store: mockStore(initialState) },
-      messages
-    });
+    const store = mockStore(initialState);
+    mountWithIntl(
+      <Provider store={store}><Form /></Provider>,
+      locale,
+      messages,
+    );
   });
 
-  describe('updates value state', () => {  
+  describe('updates value state', () => {
     const value = 'todo';
-    let wrapper, input, store; 
+    let wrapper;
+    let input;
+    let button;
+    let store;
 
     beforeEach(() => {
       store = mockStore(initialState);
-      wrapper = mountWithIntl(<Form />, { context: { store }, messages });
-      input = wrapper.find('Input')
-      input.find('input').instance().value = value;
+      wrapper = mountWithIntl(
+        <Provider store={store}><Form /></Provider>,
+        locale,
+        messages,
+      );
+      input = wrapper.find('input');
+      input.instance().value = value;
+      button = wrapper.find('button');
     });
 
     it('on input change', () => {
       input.simulate('change');
-      expect(wrapper.childAt(0).childAt(0).props().value).toEqual(value);
+      input = wrapper.find('input');
+      expect(input.props().value).toEqual(value);
     });
 
     it('to empty string on button click', () => {
-      wrapper.find('Button').simulate('click');
-      expect(wrapper.childAt(0).childAt(0).props().value).toEqual('');
+      button.simulate('click');
+      input = wrapper.find('input');
+      expect(input.props().value).toEqual('');
     });
 
     it('with non empty string and dispatch action', () => {
       input.simulate('change');
-      wrapper.find('Button').simulate('click');
+      button.simulate('click');
       expect(store.getActions()).toEqual([addTodo(value)]);
     });
   });

@@ -7,8 +7,8 @@ describe('component <Item />', () => {
   it('renders as active', () => {
     shallow(<Item />);
   });
-    
+
   it('renders as completed', () => {
-    shallow(<Item completed/>);
+    shallow(<Item completed />);
   });
 });

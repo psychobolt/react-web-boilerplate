@@ -1,10 +1,29 @@
-import React from 'react';
+// @flow
+import * as React from 'react';
 import { FormattedMessage } from 'react-intl';
-import { Group, Input, Button } from 'rebass';
+import { Flex, Button, Input } from '@chakra-ui/core';
 
-export default ({ value, onInput, submit }) => (
-  <Group>
-    <Input onChange={onInput} value={value} />
-    <Button onClick={submit}><FormattedMessage id="label_add_todo" /></Button>
-  </Group>
-);
+const { useState } = React;
+const initialValue = '';
+
+type Props = {
+  onSubmit: (value: string) => any
+};
+
+export default ({ onSubmit }: Props) => {
+  const [value, setValue] = useState(initialValue);
+  return (
+    <Flex pt="15px">
+      <Input onChange={({ target }) => setValue(target.value)} value={value} />
+      <Button
+        colorScheme="blue"
+        onClick={() => {
+          onSubmit(value);
+          setValue(initialValue);
+        }}
+      >
+        <FormattedMessage id="label_add_todo" />
+      </Button>
+    </Flex>
+  );
+};

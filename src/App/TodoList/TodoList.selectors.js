@@ -4,10 +4,9 @@ import { Filters } from './Filter';
 
 const getTodos = state => Object.values(state.todos);
 
-const getFilter = (state, props) => props.activeFilter;
-
 export const getVisibleTodos = createSelector(
-  [getTodos, getFilter],
+  getTodos,
+  (_, filter) => filter,
   (todos, filter) => {
     switch (filter) {
       case Filters.COMPLETED:
@@ -17,5 +16,5 @@ export const getVisibleTodos = createSelector(
       default:
         return todos;
     }
-  }
+  },
 );

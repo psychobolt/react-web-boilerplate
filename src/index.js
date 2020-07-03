@@ -8,7 +8,7 @@ import Routes from './routes';
 import reducer from './reducer';
 import registerServiceWorker from './registerServiceWorker';
 
-const composeEnhancers = composeWithDevTools({});
+const composeEnhancers = composeWithDevTools({ trace: true });
 const store = createStore(
   reducer,
   composeEnhancers(),
@@ -16,12 +16,12 @@ const store = createStore(
 
 if (module.hot) {
   module.hot.accept('./reducer', () => {
-    store.replaceReducer(require('./reducer').default);
+    store.replaceReducer(require('./reducer').default); // eslint-disable-line global-require
   });
 }
 
 ReactDOM.render(
-  <Provider store={store}><Routes /></Provider>, 
-  document.getElementById('root')
+  <Provider store={store}><Routes /></Provider>,
+  document.getElementById('root'),
 );
 registerServiceWorker();

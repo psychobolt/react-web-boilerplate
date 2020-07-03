@@ -5,7 +5,7 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "test": "react-app-rewired test --env=jsdom --watchAll",
+    "test": "react-app-rewired test --env=jsdom",
     "lint": "npm run lint:js && npm run lint:css",
     "lint:tests": "eslint src/**/__tests__/*.js",
     "lint:js": "eslint **/*.js",
